@@ -273,12 +273,12 @@ class DiscoveryV1(WatsonDeveloperCloudService):
         return self.request(method='POST',
                             url=url_string,
                             params=params,
-                            data=metadata,
                             files={'file': file_tuple,
                                    'metadata': (None,
                                                 json.dumps(metadata),
                                                 'application/json')},
                             accept_json=True)
+
     def update_document(self,
                         environment_id,
                         collection_id,
@@ -308,7 +308,6 @@ class DiscoveryV1(WatsonDeveloperCloudService):
         return self.request(method='POST',
                             url=url_string,
                             params=params,
-                            data=metadata,
                             files={'file': file_tuple,
                                    'metadata': (None,
                                                 json.dumps(metadata),
